@@ -61,7 +61,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
           <Link to="/" className="text-2xl font-serif font-bold text-stone-800 dark:text-stone-100 flex items-center gap-2">
-            <span className="text-primary text-3xl">✾</span> An Nhiên
+            <span className="text-primary text-3xl">✾</span> Sen Yoga
           </Link>
 
           {/* Desktop Nav */}
@@ -138,7 +138,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="grid md:grid-cols-3 gap-12 mb-12">
             <div>
               <h3 className="text-2xl font-serif font-bold text-stone-800 dark:text-stone-100 mb-4 flex items-center gap-2">
-                <span className="text-primary">✾</span> An Nhiên Yoga
+                <span className="text-primary">✾</span> Sen Yoga
               </h3>
               <p className="text-stone-600 dark:text-stone-400 leading-relaxed mb-6">
                 Lan tỏa năng lượng tích cực và sự bình an qua từng hơi thở. Hãy cùng nhau xây dựng một cộng đồng khỏe mạnh cả về thể chất lẫn tinh thần.
@@ -169,14 +169,14 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <div>
               <h4 className="text-lg font-bold text-stone-800 dark:text-stone-100 mb-6 uppercase tracking-wider">Liên Hệ</h4>
               <ul className="space-y-3 text-stone-600 dark:text-stone-400">
-                <li>Email: contact@yogaanhien.vn</li>
-                <li>Hotline: 0909 123 456</li>
+                <li>Email: contact@senyoga.vn</li>
+                <li>Hotline: 0367 852 022</li>
                 <li>Địa chỉ: 123 Thảo Điền, Quận 2, TP.HCM</li>
               </ul>
             </div>
           </div>
           <div className="text-center pt-8 border-t border-stone-200 dark:border-stone-800 text-sm text-stone-500">
-            © {new Date().getFullYear()} Yoga An Nhiên. All rights reserved. Design with Mindfulness.
+            © {new Date().getFullYear()} Sen Yoga. All rights reserved. Design with Mindfulness.
           </div>
         </div>
       </footer>

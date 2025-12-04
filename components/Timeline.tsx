@@ -30,7 +30,7 @@ const MILESTONES: Milestone[] = [
   },
   {
     year: '2023',
-    title: 'Thành Lập An Nhiên Yoga',
+    title: 'Thành Lập Sen Yoga',
     description: 'Mở studio riêng với mong muốn tạo ra một không gian xanh, yên bình để cộng đồng cùng nhau tập luyện.',
     icon: Flag
   }

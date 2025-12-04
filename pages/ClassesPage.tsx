@@ -105,13 +105,17 @@ const ClassesPage: React.FC = () => {
                   ))}
                 </ul>
 
-                <button className={`w-full py-3 rounded-xl font-bold transition-colors ${
+                <a 
+                  href="https://zalo.me/0367852022" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={`block w-full py-3 rounded-xl font-bold transition-colors text-center ${
                   plan.isPopular 
                     ? 'bg-primary text-white hover:bg-emerald-700' 
                     : 'bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 hover:bg-stone-200 dark:hover:bg-stone-700'
                 }`}>
                   Đăng Ký Ngay
-                </button>
+                </a>
               </div>
             </Reveal>
           ))}

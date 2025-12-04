@@ -24,7 +24,7 @@ const AboutPage: React.FC = () => {
       {/* Header */}
       <div className="bg-stone-100 dark:bg-stone-800 py-20 text-center">
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-stone-800 dark:text-stone-100 mb-4">Về An Nhiên</h1>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-stone-800 dark:text-stone-100 mb-4">Về Sen Yoga</h1>
           <p className="text-stone-600 dark:text-stone-400 max-w-xl mx-auto">Hành trình từ một nhân viên văn phòng bận rộn đến người hướng dẫn Yoga đầy đam mê.</p>
         </div>
       </div>
@@ -40,7 +40,7 @@ const AboutPage: React.FC = () => {
                   <img 
                     key={index}
                     src={img} 
-                    alt={`An Nhiên Yoga ${index + 1}`} 
+                    alt={`Sen Yoga ${index + 1}`} 
                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
                       index === currentImage ? 'opacity-100' : 'opacity-0'
                     }`}
@@ -156,7 +156,7 @@ const AboutPage: React.FC = () => {
            </p>
            <div className="text-left space-y-4 text-stone-600 dark:text-stone-300 leading-relaxed bg-white dark:bg-stone-900 p-8 rounded-2xl shadow-sm border border-stone-100 dark:border-stone-800">
              <p>
-               Lớp học của An Nhiên chú trọng vào <strong>sự an toàn (Safety)</strong>, <strong>định tuyến chuẩn (Alignment)</strong> và việc <strong>kết nối hơi thở (Breath Connection)</strong>.
+               Lớp học của Sen Yoga chú trọng vào <strong>sự an toàn (Safety)</strong>, <strong>định tuyến chuẩn (Alignment)</strong> và việc <strong>kết nối hơi thở (Breath Connection)</strong>.
              </p>
              <p>
                Tôi tin rằng mỗi cơ thể là một ngôi đền thiêng liêng và độc nhất. Trong lớp học của tôi, không có sự phán xét, không có sự cạnh tranh. Chỉ có bạn, hơi thở của bạn và khoảnh khắc hiện tại.

@@ -65,7 +65,7 @@ const BMICalculator: React.FC = () => {
                         Tính BMI & Gợi Ý Lớp Học
                     </h2>
                     <p className="text-stone-600 dark:text-stone-400 mb-8">
-                        Nhập chiều cao và cân nặng của bạn để nhận được gợi ý lớp học Yoga phù hợp nhất từ An Nhiên.
+                        Nhập chiều cao và cân nặng của bạn để nhận được gợi ý lớp học Yoga phù hợp nhất từ Sen Yoga.
                     </p>
                     
                     <form onSubmit={calculateBMI} className="space-y-6 bg-stone-50 dark:bg-stone-800 p-8 rounded-2xl border border-stone-100 dark:border-stone-700 shadow-sm">

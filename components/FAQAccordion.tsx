@@ -10,7 +10,7 @@ interface FAQItem {
 const FAQS: FAQItem[] = [
   {
     question: "Tôi chưa từng tập Yoga bao giờ, có tham gia được không?",
-    answer: "Hoàn toàn được! Tại An Nhiên, chúng tôi có các lớp 'Yoga Cho Người Mới Bắt Đầu' được thiết kế riêng để giúp bạn làm quen với các tư thế cơ bản và kỹ thuật hít thở một cách an toàn và hiệu quả."
+    answer: "Hoàn toàn được! Tại Sen Yoga, chúng tôi có các lớp 'Yoga Cho Người Mới Bắt Đầu' được thiết kế riêng để giúp bạn làm quen với các tư thế cơ bản và kỹ thuật hít thở một cách an toàn và hiệu quả."
   },
   {
     question: "Tôi cần chuẩn bị gì khi đến lớp?",

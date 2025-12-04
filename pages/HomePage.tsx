@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight, Star, X, Check } from 'lucide-react';
 import { HERO_SLOGAN, HERO_SUBTEXT, YOGA_STYLES, TESTIMONIALS } from '../constants';
 import Reveal from '../components/Reveal';
 import BMICalculator from '../components/BMICalculator';
 import QuoteCarousel from '../components/QuoteCarousel';
 
 const HomePage: React.FC = () => {
+  const [selectedStyle, setSelectedStyle] = useState<typeof YOGA_STYLES[0] | null>(null);
+
+  const openModal = (style: typeof YOGA_STYLES[0]) => {
+    setSelectedStyle(style);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    setSelectedStyle(null);
+    document.body.style.overflow = 'auto';
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -64,9 +76,12 @@ const HomePage: React.FC = () => {
               const Icon = style.icon;
               return (
                 <Reveal key={index} delay={index * 100}>
-                  <div className="bg-white dark:bg-stone-900 p-8 rounded-2xl shadow-sm hover:shadow-md text-center group border border-stone-100 dark:border-stone-800 h-full">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white">
-                      <Icon size={32} className="text-primary group-hover:text-white" />
+                  <div 
+                    onClick={() => openModal(style)}
+                    className="bg-white dark:bg-stone-900 p-8 rounded-2xl shadow-sm hover:shadow-md text-center group border border-stone-100 dark:border-stone-800 h-full cursor-pointer transition-all hover:-translate-y-1"
+                  >
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                      <Icon size={32} className="text-primary group-hover:text-white transition-colors" />
                     </div>
                     <h3 className="text-xl font-serif font-bold mb-3 text-stone-800 dark:text-stone-100">{style.name}</h3>
                     <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">{style.desc}</p>
@@ -77,6 +92,78 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Style Detail Modal */}
+      {selectedStyle && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div 
+            className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm transition-opacity" 
+            onClick={closeModal}
+          ></div>
+          <div className="bg-white dark:bg-stone-900 rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative z-10 animate-fade-in-up border border-stone-200 dark:border-stone-700">
+            <button 
+              onClick={closeModal}
+              className="absolute top-6 right-6 p-2 rounded-full bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-800 dark:text-stone-200 shadow-sm transition-colors z-10"
+            >
+              <X size={24} />
+            </button>
+
+            <div className="p-8">
+              <div className="flex flex-col items-center text-center mb-8">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
+                  {React.createElement(selectedStyle.icon, { size: 40 })}
+                </div>
+                <h2 className="text-3xl font-serif font-bold text-stone-900 dark:text-stone-100 mb-2">{selectedStyle.name}</h2>
+                <div className="w-16 h-1 bg-primary rounded-full"></div>
+              </div>
+
+              <div className="space-y-8">
+                <div>
+                  <p className="text-lg text-stone-600 dark:text-stone-300 leading-relaxed text-center">
+                    {selectedStyle.details}
+                  </p>
+                </div>
+
+                <div className="bg-stone-50 dark:bg-stone-800/50 p-6 rounded-2xl">
+                  <h4 className="font-bold text-stone-800 dark:text-stone-200 mb-4 uppercase tracking-wide text-sm">Lợi Ích</h4>
+                  <ul className="grid sm:grid-cols-2 gap-3">
+                    {selectedStyle.benefits?.map((benefit, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-stone-600 dark:text-stone-300 text-sm">
+                        <Check size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                   <h4 className="font-bold text-stone-800 dark:text-stone-200 mb-2 uppercase tracking-wide text-sm">Phù hợp với:</h4>
+                   <p className="text-stone-600 dark:text-stone-300 italic">
+                     {selectedStyle.suitableFor}
+                   </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="p-6 pt-0 text-center border-t border-stone-100 dark:border-stone-800 mt-2">
+              <div className="flex gap-4 justify-center mt-6">
+                <button 
+                  onClick={closeModal}
+                  className="px-6 py-3 bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 rounded-xl font-medium transition-colors"
+                >
+                  Đóng
+                </button>
+                <Link 
+                  to="/schedule"
+                  className="px-6 py-3 bg-primary hover:bg-emerald-700 text-white rounded-xl font-medium transition-colors shadow-lg shadow-primary/20"
+                >
+                  Xem Lịch Tập
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Quote Section */}
       <section className="py-20 bg-secondary dark:bg-stone-800">
@@ -96,7 +183,7 @@ const HomePage: React.FC = () => {
                 <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 dark:text-stone-100 mb-2">Học Viên Nói Gì?</h2>
                 <p className="text-stone-600 dark:text-stone-400">Những câu chuyện thay đổi tích cực từ cộng đồng.</p>
              </div>
-             <Link to="/about" className="hidden md:block text-primary font-medium hover:underline">Xem thêm về An Nhiên</Link>
+             <Link to="/about" className="hidden md:block text-primary font-medium hover:underline">Xem thêm về Sen Yoga</Link>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">

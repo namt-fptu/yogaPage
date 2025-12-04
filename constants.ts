@@ -15,10 +15,58 @@ export const HERO_SLOGAN = "Tìm lại sự cân bằng từ hơi thở";
 export const HERO_SUBTEXT = "Yoga không chỉ là bài tập, mà là hành trình quay về với chính mình. Hãy cùng tôi khám phá sức mạnh của sự tĩnh lặng.";
 
 export const YOGA_STYLES = [
-  { name: 'Hatha Yoga', icon: Sun, desc: 'Cân bằng thân tâm qua các tư thế cơ bản.' },
-  { name: 'Vinyasa Flow', icon: Wind, desc: 'Chuyển động nhịp nhàng kết hợp hơi thở.' },
-  { name: 'Yin Yoga', icon: Moon, desc: 'Kéo giãn sâu, thư giãn và phục hồi năng lượng.' },
-  { name: 'Thiền Định', icon: Leaf, desc: 'Tìm sự tĩnh lặng và chánh niệm trong tâm hồn.' },
+  { 
+    name: 'Hatha Yoga', 
+    icon: Sun, 
+    desc: 'Cân bằng thân tâm qua các tư thế cơ bản.',
+    details: 'Hatha Yoga là nền tảng của mọi loại hình Yoga, tập trung vào việc làm chủ cơ thể và hơi thở. Các tư thế (Asana) được giữ lâu hơn để người tập cảm nhận sâu sắc sự tác động vào cơ bắp và tâm trí.',
+    benefits: [
+      'Cải thiện sự dẻo dai và sức mạnh cơ bắp.',
+      'Giúp cân bằng hệ thần kinh, giảm căng thẳng.',
+      'Tăng cường sự tập trung và ý thức về cơ thể.',
+      'Phù hợp cho người mới bắt đầu để xây dựng nền tảng vững chắc.'
+    ],
+    suitableFor: 'Người mới bắt đầu, người muốn tập luyện nhẹ nhàng, người cần phục hồi.'
+  },
+  { 
+    name: 'Vinyasa Flow', 
+    icon: Wind, 
+    desc: 'Chuyển động nhịp nhàng kết hợp hơi thở.',
+    details: 'Vinyasa là phong cách Yoga năng động, nơi các động tác được kết nối mượt mà với nhau qua từng nhịp thở. Lớp học thường có tiết tấu nhanh, tạo ra nhiệt lượng và sự hứng khởi.',
+    benefits: [
+      'Đốt cháy calo hiệu quả, hỗ trợ giảm cân.',
+      'Tăng cường sức bền tim mạch và thể lực.',
+      'Thải độc cơ thể qua tuyến mồ hôi.',
+      'Giúp tâm trí tập trung vào hiện tại (thiền trong chuyển động).'
+    ],
+    suitableFor: 'Người thích sự năng động, muốn thử thách thể lực, người đã có nền tảng cơ bản.'
+  },
+  { 
+    name: 'Yin Yoga', 
+    icon: Moon, 
+    desc: 'Kéo giãn sâu, thư giãn và phục hồi năng lượng.',
+    details: 'Trái ngược với các loại hình Yoga năng động (Yang), Yin Yoga tập trung vào các mô liên kết sâu (dây chằng, khớp, xương). Các tư thế thường được giữ từ 3-5 phút để kéo giãn thụ động.',
+    benefits: [
+      'Tăng độ linh hoạt cho khớp và dây chằng.',
+      'Giải phóng tắc nghẽn năng lượng trong cơ thể.',
+      'Rèn luyện sự kiên nhẫn và khả năng chịu đựng.',
+      'Cân bằng lại năng lượng sau những buổi tập nặng hoặc ngày làm việc căng thẳng.'
+    ],
+    suitableFor: 'Mọi cấp độ, đặc biệt là người bị cứng khớp, người tập thể thao cường độ cao cần phục hồi.'
+  },
+  { 
+    name: 'Thiền Định', 
+    icon: Leaf, 
+    desc: 'Tìm sự tĩnh lặng và chánh niệm trong tâm hồn.',
+    details: 'Thiền định không phải là làm cho tâm trí trống rỗng, mà là quan sát suy nghĩ và cảm xúc mà không phán xét. Các lớp thiền giúp bạn kết nối sâu sắc với nội tâm và tìm thấy sự bình an.',
+    benefits: [
+      'Giảm lo âu, stress và cải thiện giấc ngủ.',
+      'Tăng cường trí tuệ cảm xúc và sự sáng suốt.',
+      'Hạ huyết áp và nhịp tim, tốt cho tim mạch.',
+      'Nuôi dưỡng lòng trắc ẩn và sự biết ơn.'
+    ],
+    suitableFor: 'Bất kỳ ai muốn tìm kiếm sự bình yên, cải thiện sức khỏe tinh thần.'
+  },
 ];
 
 export const CLASSES: ClassType[] = [
@@ -73,10 +121,9 @@ export const PRICING: PricingPlan[] = [
 ];
 
 export const SCHEDULE_DATA: ScheduleItem[] = [
-  { time: '06:00 - 07:00', monday: 'Morning Flow', wednesday: 'Hatha Yoga', friday: 'Vinyasa' },
-  { time: '09:00 - 10:15', tuesday: 'Cơ Bản', thursday: 'Cơ Bản', saturday: 'Yoga Dây' },
-  { time: '17:30 - 18:30', monday: 'Giảm Mỡ', wednesday: 'Power Yoga', friday: 'Core Strength' },
-  { time: '19:00 - 20:15', tuesday: 'Yin Yoga', thursday: 'Trị Liệu Lưng', sunday: 'Thiền & Thở' },
+  { time: '05:00 - 06:00', monday: 'Morning Flow', tuesday: 'Hatha Yoga', wednesday: 'Vinyasa', thursday: 'Cơ Bản', friday: 'Power Yoga', saturday: 'Yoga Tổng Hợp' },
+  { time: '15:00 - 16:00', monday: 'Cơ Bản', tuesday: 'Trị Liệu', wednesday: 'Yin Yoga', thursday: 'Giảm Mỡ', friday: 'Thư Giãn' },
+  { time: '17:30 - 18:30', monday: 'Vinyasa Flow', tuesday: 'Core Strength', wednesday: 'Hatha Yoga', thursday: 'Yoga Dây', friday: 'Thiền & Thở' },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [

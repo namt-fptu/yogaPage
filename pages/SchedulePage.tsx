@@ -88,9 +88,14 @@ const SchedulePage: React.FC = () => {
 
         <div className="mt-8 text-center">
           <p className="text-stone-500 italic mb-4">* Vui lòng đến trước giờ tập 10 phút để chuẩn bị.</p>
-          <button className="bg-primary hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-full shadow-lg">
+          <a 
+            href="https://zalo.me/0367852022" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block bg-primary hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-full shadow-lg"
+          >
             Đăng Ký Giữ Chỗ
-          </button>
+          </a>
         </div>
       </div>
     </div>
