@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Clock } from 'lucide-react';
+import FAQAccordion from '../components/FAQAccordion';
 
 const ContactPage: React.FC = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
@@ -14,7 +15,7 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="animate-fade-in pb-20">
+    <div className="pb-20">
       <div className="bg-stone-100 dark:bg-stone-800 py-16 text-center">
         <div className="container mx-auto px-6">
           <h1 className="text-4xl font-serif font-bold text-stone-800 dark:text-stone-100 mb-2">Liên Hệ</h1>
@@ -61,6 +62,20 @@ const ContactPage: React.FC = () => {
                     <p className="text-stone-600 dark:text-stone-400">contact@yogaanhien.vn</p>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary/10 p-3 rounded-full text-primary">
+                    <Clock size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-stone-900 dark:text-stone-100">Giờ Mở Cửa</h4>
+                    <ul className="text-stone-600 dark:text-stone-400 text-sm mt-1 space-y-1">
+                      <li className="flex justify-between w-48"><span>Thứ 2 - Thứ 6:</span> <span>06:00 - 20:30</span></li>
+                      <li className="flex justify-between w-48"><span>Thứ 7:</span> <span>07:00 - 18:00</span></li>
+                      <li className="flex justify-between w-48"><span>Chủ Nhật:</span> <span>08:00 - 12:00</span></li>
+                    </ul>
+                  </div>
+                </div>
              </div>
 
              {/* Map Placeholder */}
@@ -94,8 +109,20 @@ const ContactPage: React.FC = () => {
                   <input 
                     type="text" 
                     required 
-                    className="w-full px-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none transition-all dark:text-stone-200"
+                    className="w-full px-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none dark:text-stone-200"
                     placeholder="Nguyễn Văn A"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-1">Số điện thoại</label>
+                  <input 
+                    type="tel" 
+                    required 
+                    pattern="[0-9]{10,11}"
+                    inputMode="numeric"
+                    className="w-full px-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none dark:text-stone-200"
+                    placeholder="0909 123 456"
                   />
                 </div>
 
@@ -104,7 +131,7 @@ const ContactPage: React.FC = () => {
                   <input 
                     type="email" 
                     required 
-                    className="w-full px-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none transition-all dark:text-stone-200"
+                    className="w-full px-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none dark:text-stone-200"
                     placeholder="email@example.com"
                   />
                 </div>
@@ -114,7 +141,7 @@ const ContactPage: React.FC = () => {
                   <textarea 
                     rows={4}
                     required 
-                    className="w-full px-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none transition-all dark:text-stone-200 resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none dark:text-stone-200 resize-none"
                     placeholder="Tôi muốn đăng ký lớp học..."
                   ></textarea>
                 </div>
@@ -122,7 +149,7 @@ const ContactPage: React.FC = () => {
                 <button 
                   type="submit" 
                   disabled={formStatus === 'submitting'}
-                  className="w-full py-4 bg-primary hover:bg-emerald-700 text-white font-bold rounded-xl transition-colors shadow-md disabled:opacity-70 flex items-center justify-center gap-2"
+                  className="w-full py-4 bg-primary hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md disabled:opacity-70 flex items-center justify-center gap-2"
                 >
                   {formStatus === 'submitting' ? 'Đang gửi...' : 'Gửi Tin Nhắn'}
                   {!formStatus && <Send size={18} />}
@@ -130,6 +157,11 @@ const ContactPage: React.FC = () => {
               </form>
             )}
           </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-24">
+          <FAQAccordion />
         </div>
       </div>
     </div>

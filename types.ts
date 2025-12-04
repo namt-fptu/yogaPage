@@ -33,6 +33,7 @@ export interface BlogPost {
   id: string;
   title: string;
   excerpt: string;
+  content?: string[];
   date: string;
   category: string;
   image: string;
@@ -49,13 +50,6 @@ export interface ScheduleItem {
   sunday?: string;
 }
 
-export interface ChatMessage {
-  id: string;
-  role: 'user' | 'model';
-  text: string;
-  timestamp: number;
-}
-
 export interface YogaPose {
   id: string;
   name: string;
@@ -63,6 +57,14 @@ export interface YogaPose {
   benefit: string;
   difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
   icon: any;
+  image: string;
   steps?: string[];
   tips?: string;
+}
+
+export interface GalleryImage {
+  id: string;
+  src: string;
+  alt: string;
+  category: 'Studio' | 'Students' | 'Events' | 'Nature';
 }

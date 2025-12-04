@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Award, Heart, Leaf, ChevronLeft, ChevronRight, Users, Clock, Calendar } from 'lucide-react';
+import Timeline from '../components/Timeline';
 
 const IMAGES = [
   "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Portrait
@@ -137,6 +138,11 @@ const AboutPage: React.FC = () => {
               <div className="text-3xl font-bold text-stone-800 dark:text-stone-100">10+</div>
               <div className="text-sm text-stone-500 dark:text-stone-400">Workshop lớn</div>
             </div>
+        </div>
+
+        {/* Timeline Section */}
+        <div className="mb-24">
+          <Timeline />
         </div>
 
         {/* Philosophy */}

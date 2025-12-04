@@ -1,0 +1,227 @@
+================================================================================
+TOÀN BỘ NỘI DUNG TEXT TRÊN WEBSITE YOGA AN NHIÊN
+================================================================================
+
+--- [ GLOBAL / CHUNG ] ---
+
+[Tiêu đề trang (Page Title)]
+Yoga An Nhiên - Tìm Lại Sự Cân Bằng
+
+[Menu Điều Hướng (Navigation)]
+- Trang Chủ
+- Về Tôi
+- Lớp Học
+- Lịch Tập
+- Thư Viện
+- Bài Viết
+- Liên Hệ
+
+[Footer]
+- Slogan: Lan tỏa năng lượng tích cực và sự bình an qua từng hơi thở. Hãy cùng nhau xây dựng một cộng đồng khỏe mạnh cả về thể chất lẫn tinh thần.
+- Liên Kết: (Danh sách menu lặp lại)
+- Liên Hệ:
+  + Email: contact@yogaanhien.vn
+  + Hotline: 0909 123 456
+  + Địa chỉ: 123 Thảo Điền, Quận 2, TP.HCM
+- Copyright: © 2025 Yoga An Nhiên. All rights reserved. Design with Mindfulness.
+
+--- [ TRANG CHỦ (HOME PAGE) ] ---
+
+[Hero Section]
+- Tagline: Mindfulness & Balance
+- Slogan chính: Tìm lại sự cân bằng từ hơi thở
+- Mô tả: Yoga không chỉ là bài tập, mà là hành trình quay về với chính mình. Hãy cùng tôi khám phá sức mạnh của sự tĩnh lặng.
+- Nút bấm (Buttons):
+  + Đặt Lịch Ngay
+  + Xem Các Lớp
+- Chỉ dẫn: Cuộn xuống
+
+[Phong Cách Luyện Tập]
+- Tiêu đề: Phong Cách Luyện Tập
+- Các phong cách:
+  1. Hatha Yoga: Cân bằng thân tâm qua các tư thế cơ bản.
+  2. Vinyasa Flow: Chuyển động nhịp nhàng kết hợp hơi thở.
+  3. Yin Yoga: Kéo giãn sâu, thư giãn và phục hồi năng lượng.
+  4. Thiền Định: Tìm sự tĩnh lặng và chánh niệm trong tâm hồn.
+
+[Quotes Carousel (Trích dẫn)]
+- "Yoga là cuộc hành trình của cái tôi, thông qua cái tôi, đến với cái tôi." — The Bhagavad Gita
+- "Yoga không phải là chạm vào ngón chân, mà là những gì bạn học được trên đường đi xuống." — Jigar Gor
+- "Hơi thở là vua của tâm trí." — B.K.S. Iyengar
+- "Yoga là suối nguồn của tuổi trẻ. Bạn chỉ già đi khi cột sống của bạn ngừng linh hoạt." — Indra Devi
+- "Cơ thể bạn là ngôi đền, hãy giữ cho nó trong sạch và tinh khiết để linh hồn trú ngụ." — B.K.S. Iyengar
+
+[Testimonials (Học Viên Nói Gì?)]
+- Tiêu đề: Học Viên Nói Gì?
+- Mô tả: Những câu chuyện thay đổi tích cực từ cộng đồng.
+- Link: Xem thêm về An Nhiên
+- Đánh giá:
+  1. Minh Hạnh (Nhân viên văn phòng): "Sau 3 tháng tập luyện, chứng đau lưng của mình đã giảm hẳn. Cô giáo rất tận tâm chỉnh sửa từng động tác."
+  2. Thu Thảo (Freelancer): "Không gian tập luyện vô cùng thư thái. Mỗi buổi tập là một lần mình được nạp lại năng lượng tích cực."
+  3. Quang Huy (Lập trình viên): "Yoga giúp mình cải thiện sự tập trung rất nhiều. Các bài tập thở thực sự hiệu quả để giảm stress."
+  4. Hoàng Yến (Graphic Designer): "Lớp học buổi sáng thực sự thay đổi thói quen sinh hoạt của mình. Cảm thấy tràn đầy năng lượng và sáng tạo hơn trong công việc."
+  5. Đức Thịnh (Kỹ sư xây dựng): "Ban đầu mình nghĩ Yoga chỉ dành cho nữ, nhưng sau khi thử lớp Power Yoga, mình đã hoàn toàn thay đổi suy nghĩ. Rất thử thách và hiệu quả!"
+  6. Thanh Trúc (Mẹ bỉm sữa): "Mình tìm đến Yoga để phục hồi sau sinh. Cô giáo rất hiểu tâm lý và hướng dẫn những bài tập phù hợp, nhẹ nhàng giúp mình lấy lại vóc dáng."
+
+--- [ TRANG VỀ TÔI (ABOUT PAGE) ] ---
+
+[Header]
+- Tiêu đề: Về An Nhiên
+- Mô tả: Hành trình từ một nhân viên văn phòng bận rộn đến người hướng dẫn Yoga đầy đam mê.
+
+[Giới thiệu bản thân]
+- Tiêu đề: Chào bạn, tôi là An Nhiên
+- Nội dung:
+  + Cách đây 5 năm, tôi cũng giống như nhiều bạn, quay cuồng trong áp lực công việc và quên mất việc chăm sóc bản thân. Những cơn đau lưng triền miên và giấc ngủ chập chờn đã đưa tôi đến với tấm thảm tập lần đầu tiên.
+  + Yoga đến với tôi như một "cứu cánh" chữa lành cả thể chất lẫn tinh thần. Sau chuyến đi tu nghiệp 200 giờ tại Rishikesh (Ấn Độ) và 300 giờ nâng cao tại Bali, tôi nhận ra sứ mệnh của mình không chỉ là tập luyện cho bản thân, mà là lan tỏa sự bình an này đến mọi người.
+
+[Giá trị cốt lõi]
+- Chứng Chỉ Quốc Tế: E-RYT 500h Yoga Alliance & YACEP
+- Tâm Huyết: Dạy từ trái tim, điều chỉnh từng tư thế
+- Lối Sống: Thực hành ăn chay & sống tối giản
+
+[Thống kê (Stats)]
+- 5000+ Giờ đứng lớp
+- 1000+ Học viên
+- 7 Năm Kinh nghiệm
+- 10+ Workshop lớn
+
+[Hành Trình Phát Triển (Timeline)]
+- 2017: Khởi Đầu Hành Trình - Bắt đầu tập luyện Yoga để cải thiện sức khỏe và tìm lại sự cân bằng sau những áp lực công việc văn phòng.
+- 2019: Chứng Chỉ RYT 200h - Hoàn thành khóa đào tạo giáo viên Yoga quốc tế 200 giờ tại Rishikesh, cái nôi của Yoga tại Ấn Độ.
+- 2021: Nâng Cao Chuyên Môn - Tiếp tục tu nghiệp khóa RYT 300h nâng cao tại Bali, chuyên sâu về Yoga Trị Liệu và Thiền Định.
+- 2023: Thành Lập An Nhiên Yoga - Mở studio riêng với mong muốn tạo ra một không gian xanh, yên bình để cộng đồng cùng nhau tập luyện.
+
+[Triết Lý Giảng Dạy]
+- Quote: "Không ép buộc cơ thể vào tư thế, hãy dùng tư thế để khám phá cơ thể."
+- Nội dung:
+  + Lớp học của An Nhiên chú trọng vào sự an toàn (Safety), định tuyến chuẩn (Alignment) và việc kết nối hơi thở (Breath Connection).
+  + Tôi tin rằng mỗi cơ thể là một ngôi đền thiêng liêng và độc nhất. Trong lớp học của tôi, không có sự phán xét, không có sự cạnh tranh. Chỉ có bạn, hơi thở của bạn và khoảnh khắc hiện tại.
+  + Dù bạn là người mới bắt đầu với cơ thể cứng nhắc, hay người đã tập lâu năm muốn đi sâu vào thiền định, tôi luôn thiết kế các bài tập đa dạng (Modifications) để phù hợp với thể trạng của từng người.
+
+--- [ TRANG LỚP HỌC (CLASSES PAGE) ] ---
+
+[Header]
+- Tiêu đề: Lớp Học & Gói Tập
+- Mô tả: Chọn hành trình phù hợp nhất với bạn
+
+[Danh sách lớp học]
+1. Yoga Cho Người Mới Bắt Đầu
+   - Mô tả: Lớp học nhẹ nhàng giúp bạn làm quen với các tư thế cơ bản và kỹ thuật hít thở đúng cách.
+   - Cấp độ: Cơ bản
+   - Thời lượng: 60 phút
+2. Morning Flow - Năng Lượng Sáng
+   - Mô tả: Đánh thức cơ thể với chuỗi bài tập Vinyasa năng động để khởi đầu ngày mới.
+   - Cấp độ: Trung bình
+   - Thời lượng: 45 phút
+3. Relax & Restore - Thư Giãn Sâu
+   - Mô tả: Kết hợp Yin Yoga và Thiền chuông xoay giúp giảm căng thẳng và ngủ ngon hơn.
+   - Cấp độ: Mọi cấp độ
+   - Thời lượng: 75 phút
+
+[Bảng Giá]
+1. Buổi Lẻ: 150.000đ
+   - Tham gia 1 buổi tập bất kỳ
+   - Thảm tập miễn phí
+   - Nước uống detox
+2. Gói Tháng (Phổ Biến Nhất): 1.200.000đ/tháng
+   - 12 buổi tập / tháng
+   - Tư vấn lộ trình cá nhân
+   - Tham gia workshop miễn phí
+3. Huấn Luyện 1:1: 500.000đ/buổi
+   - Giáo án thiết kế riêng
+   - Linh hoạt thời gian
+   - Chỉnh sửa kỹ thuật chi tiết
+- Nút bấm: Đăng Ký Ngay
+
+[Tư Thế Phổ Biến & Lợi Ích]
+- Mô tả: Khám phá các động tác nền tảng giúp cải thiện sức khỏe toàn diện và cân bằng năng lượng.
+1. Tư Thế Cái Cây (Vrikshasana): Cải thiện khả năng thăng bằng và tăng cường sự tập trung của tâm trí.
+2. Chó Úp Mặt (Adho Mukha Svanasana): Kéo giãn toàn bộ cột sống, gân kheo và giúp đưa máu về não bộ.
+3. Chiến Binh II (Virabhadrasana II): Tăng sức bền cho đôi chân, mở rộng khớp hông và lồng ngực.
+4. Tư Thế Em Bé (Balasana): Thư giãn sâu vùng lưng dưới, xoa dịu hệ thần kinh và giải tỏa stress.
+5. Rắn Hổ Mang (Bhujangasana): Tăng cường sự dẻo dai cho cột sống, kích thích tiêu hóa và mở ngực.
+6. Tư Thế Hoa Sen (Padmasana): Ổn định tâm trí, tư thế ngồi hoàn hảo để thực hành thiền định lâu dài.
+
+--- [ TRANG LỊCH TẬP (SCHEDULE PAGE) ] ---
+
+[Header]
+- Tiêu đề: Lịch Tập Tuần Này
+- Mô tả: Hãy dành ít nhất 1 giờ mỗi ngày cho bản thân
+
+[Lịch Chi Tiết]
+- 06:00 - 07:00: Morning Flow (T2), Hatha Yoga (T4), Vinyasa (T6)
+- 09:00 - 10:15: Cơ Bản (T3), Cơ Bản (T5), Yoga Dây (T7)
+- 17:30 - 18:30: Giảm Mỡ (T2), Power Yoga (T4), Core Strength (T6)
+- 19:00 - 20:15: Yin Yoga (T3), Trị Liệu Lưng (T5), Thiền & Thở (CN)
+
+[Ghi chú]
+- * Vui lòng đến trước giờ tập 10 phút để chuẩn bị.
+- Nút bấm: Đăng Ký Giữ Chỗ
+
+--- [ TRANG BÀI VIẾT (BLOG PAGE) ] ---
+
+[Header]
+- Tiêu đề: Góc Chia Sẻ
+- Mô tả: Kiến thức và cảm hứng sống xanh
+- Danh mục: Tất cả, Kỹ Thuật, Dinh Dưỡng, Lối Sống, Trị Liệu, Tâm Linh, Thiền, Mẹo Tập
+
+[Danh sách bài viết]
+1. 5 Lợi Ích Của Việc Tập Yoga Buổi Sáng
+   - Tóm tắt: Khởi động ngày mới với Yoga không chỉ giúp cơ thể dẻo dai mà còn mang lại tinh thần minh mẫn.
+2. Kỹ Thuật Hít Thở Ujjayi Cho Người Mới
+   - Tóm tắt: Hơi thở chiến binh giúp bạn duy trì nhiệt lượng cơ thể và sự tập trung trong suốt buổi tập.
+3. Chế Độ Dinh Dưỡng Cho Yogi
+   - Tóm tắt: Ăn gì trước và sau khi tập để cơ thể hấp thu tốt nhất mà không bị nặng bụng?
+4. Yoga Trị Liệu Cho Dân Văn Phòng: Tạm Biệt Đau Mỏi Vai Gáy
+   - Tóm tắt: Những động tác đơn giản, dễ thực hiện ngay tại chỗ ngồi giúp giải phóng căng thẳng vùng cổ vai gáy.
+5. Luân Xa (Chakra) Là Gì? Hiểu Về 7 Trung Tâm Năng Lượng
+   - Tóm tắt: Khám phá hệ thống năng lượng tinh tế trong cơ thể và cách cân bằng chúng để có cuộc sống hài hòa.
+6. Sống Tối Giản (Minimalism) - Phép Cộng Cho Hạnh Phúc
+   - Tóm tắt: Tối giản không phải là vứt bỏ tất cả, mà là giữ lại những gì thực sự quan trọng và mang lại niềm vui.
+7. Công Thức Detox Thanh Lọc Cơ Thể Sau Kỳ Nghỉ Lễ
+   - Tóm tắt: Lấy lại vóc dáng và làn da tươi sáng với những công thức nước uống detox đơn giản từ thiên nhiên.
+8. Thiền Đi Bộ (Walking Meditation): Bình An Trong Từng Bước Chân
+   - Tóm tắt: Không cần ngồi yên một chỗ, bạn vẫn có thể thiền định ngay khi đang di chuyển.
+9. Cách Vệ Sinh Và Bảo Quản Thảm Tập Yoga Bền Đẹp
+   - Tóm tắt: Thảm tập là người bạn đồng hành thân thiết, hãy chăm sóc nó đúng cách để đảm bảo vệ sinh và độ bám.
+
+--- [ TRANG THƯ VIỆN (GALLERY PAGE) ] ---
+
+[Header]
+- Tiêu đề: Thư Viện Ảnh
+- Mô tả: Những khoảnh khắc đẹp tại An Nhiên Yoga
+
+--- [ TRANG LIÊN HỆ (CONTACT PAGE) ] ---
+
+[Header]
+- Tiêu đề: Liên Hệ
+- Mô tả: Bắt đầu hành trình của bạn ngay hôm nay
+
+[Thông Tin Kết Nối]
+- Tiêu đề: Thông Tin Kết Nối
+- Mô tả: Nếu bạn có bất kỳ câu hỏi nào về lớp học, lịch tập hay cần tư vấn về Yoga, đừng ngần ngại nhắn tin cho An Nhiên nhé.
+- Địa chỉ Studio: 123 Đường Thảo Điền, Quận 2, TP. Hồ Chí Minh
+- Hotline / Zalo: 0909 123 456
+- Email: contact@yogaanhien.vn
+- Giờ Mở Cửa:
+  + Thứ 2 - Thứ 6: 06:00 - 20:30
+  + Thứ 7: 07:00 - 18:00
+  + Chủ Nhật: 08:00 - 12:00
+
+[Form Liên Hệ]
+- Tiêu đề: Gửi Tin Nhắn
+- Các trường: Họ và Tên, Số điện thoại, Email, Nội dung
+- Nút bấm: Gửi Tin Nhắn
+
+[Câu Hỏi Thường Gặp (FAQ)]
+1. Tôi chưa từng tập Yoga bao giờ, có tham gia được không?
+   - Trả lời: Hoàn toàn được! Tại An Nhiên, chúng tôi có các lớp 'Yoga Cho Người Mới Bắt Đầu' được thiết kế riêng...
+2. Tôi cần chuẩn bị gì khi đến lớp?
+   - Trả lời: Bạn chỉ cần mang theo quần áo thoải mái, thấm hút mồ hôi và một bình nước cá nhân...
+3. Lịch học có linh hoạt không?
+   - Trả lời: Rất linh hoạt. Bạn có thể đăng ký gói tập theo buổi lẻ hoặc gói tháng...
+4. Tôi bị đau lưng/cổ vai gáy, tập Yoga có đỡ không?
+   - Trả lời: Yoga trị liệu là phương pháp tuyệt vời để cải thiện các vấn đề về xương khớp...
+5. Học phí các lớp như thế nào?
+   - Trả lời: Chúng tôi có nhiều gói tập đa dạng: Buổi lẻ (150k), Gói tháng (1.200k/12 buổi)...

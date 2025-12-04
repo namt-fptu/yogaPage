@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { CLASSES, PRICING, POPULAR_POSES } from '../constants';
 import { Check, Clock, Signal, X, Lightbulb } from 'lucide-react';
 import { YogaPose } from '../types';
+import BreathingExercise from '../components/BreathingExercise';
+import Reveal from '../components/Reveal';
 
 const ClassesPage: React.FC = () => {
   const [selectedPose, setSelectedPose] = useState<YogaPose | null>(null);
@@ -29,39 +31,41 @@ const ClassesPage: React.FC = () => {
       <div className="container mx-auto px-6 py-16">
         {/* Classes List */}
         <div className="grid lg:grid-cols-3 gap-8 mb-24">
-          {CLASSES.map((cls) => (
-            <div key={cls.id} className="group rounded-2xl overflow-hidden bg-white dark:bg-stone-900 shadow-md hover:shadow-xl transition-all duration-300 border border-stone-100 dark:border-stone-800">
-              <div className="relative h-64 overflow-hidden">
-                <img 
-                  src={cls.image} 
-                  alt={cls.title} 
-                  className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105 group-hover:brightness-110"
-                />
-                {/* Overlay with subtle fade out on hover to reveal image more */}
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
-                {/* Gradient for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                <div className="absolute bottom-4 left-4 text-white">
-                  <span className="bg-primary px-2 py-1 rounded text-xs font-bold uppercase tracking-wide mb-2 inline-block">
-                    {cls.difficulty}
-                  </span>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-serif font-bold text-stone-900 dark:text-stone-100 mb-3">{cls.title}</h3>
-                <p className="text-stone-600 dark:text-stone-400 text-sm mb-6 line-clamp-3">{cls.description}</p>
-                
-                <div className="flex items-center justify-between text-sm text-stone-500 dark:text-stone-400 border-t border-stone-100 dark:border-stone-800 pt-4">
-                  <div className="flex items-center gap-1">
-                    <Clock size={16} /> {cls.duration}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Signal size={16} /> Offline
+          {CLASSES.map((cls, index) => (
+            <Reveal key={cls.id} delay={index * 100}>
+              <div className="group rounded-2xl overflow-hidden bg-white dark:bg-stone-900 shadow-md hover:shadow-xl transition-all duration-300 border border-stone-100 dark:border-stone-800 h-full">
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={cls.image} 
+                    alt={cls.title} 
+                    className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105 group-hover:brightness-110"
+                  />
+                  {/* Overlay with subtle fade out on hover to reveal image more */}
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+                  {/* Gradient for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <span className="bg-primary px-2 py-1 rounded text-xs font-bold uppercase tracking-wide mb-2 inline-block">
+                      {cls.difficulty}
+                    </span>
                   </div>
                 </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-serif font-bold text-stone-900 dark:text-stone-100 mb-3">{cls.title}</h3>
+                  <p className="text-stone-600 dark:text-stone-400 text-sm mb-6 line-clamp-3">{cls.description}</p>
+                  
+                  <div className="flex items-center justify-between text-sm text-stone-500 dark:text-stone-400 border-t border-stone-100 dark:border-stone-800 pt-4">
+                    <div className="flex items-center gap-1">
+                      <Clock size={16} /> {cls.duration}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Signal size={16} /> Offline
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
@@ -72,43 +76,44 @@ const ClassesPage: React.FC = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-32">
-          {PRICING.map((plan) => (
-            <div 
-              key={plan.id} 
-              className={`relative rounded-2xl p-8 border ${
-                plan.isPopular 
-                  ? 'border-primary bg-stone-50 dark:bg-stone-800 shadow-xl scale-105 z-10' 
-                  : 'border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 shadow-sm'
-              }`}
-            >
-              {plan.isPopular && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white text-xs font-bold uppercase py-1 px-4 rounded-full">
-                  Phổ Biến Nhất
+          {PRICING.map((plan, index) => (
+            <Reveal key={plan.id} delay={index * 100} className="h-full">
+              <div 
+                className={`relative rounded-2xl p-8 border h-full flex flex-col ${
+                  plan.isPopular 
+                    ? 'border-primary bg-stone-50 dark:bg-stone-800 shadow-xl scale-105 z-10' 
+                    : 'border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 shadow-sm'
+                }`}
+              >
+                {plan.isPopular && (
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white text-xs font-bold uppercase py-1 px-4 rounded-full">
+                    Phổ Biến Nhất
+                  </div>
+                )}
+                <h3 className="text-xl font-bold text-stone-800 dark:text-stone-100 text-center mb-2">{plan.name}</h3>
+                <div className="text-center mb-6">
+                  <span className="text-4xl font-serif font-bold text-primary">{plan.price}</span>
+                  {plan.id !== 'drop-in' && <span className="text-stone-500 text-sm">/tháng</span>}
                 </div>
-              )}
-              <h3 className="text-xl font-bold text-stone-800 dark:text-stone-100 text-center mb-2">{plan.name}</h3>
-              <div className="text-center mb-6">
-                <span className="text-4xl font-serif font-bold text-primary">{plan.price}</span>
-                {plan.id !== 'drop-in' && <span className="text-stone-500 text-sm">/tháng</span>}
-              </div>
-              
-              <ul className="space-y-4 mb-8">
-                {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-sm text-stone-600 dark:text-stone-300">
-                    <Check size={18} className="text-primary flex-shrink-0" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+                
+                <ul className="space-y-4 mb-8 flex-grow">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-sm text-stone-600 dark:text-stone-300">
+                      <Check size={18} className="text-primary flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
 
-              <button className={`w-full py-3 rounded-xl font-bold transition-colors ${
-                plan.isPopular 
-                  ? 'bg-primary text-white hover:bg-emerald-700' 
-                  : 'bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 hover:bg-stone-200 dark:hover:bg-stone-700'
-              }`}>
-                Đăng Ký Ngay
-              </button>
-            </div>
+                <button className={`w-full py-3 rounded-xl font-bold transition-colors ${
+                  plan.isPopular 
+                    ? 'bg-primary text-white hover:bg-emerald-700' 
+                    : 'bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 hover:bg-stone-200 dark:hover:bg-stone-700'
+                }`}>
+                  Đăng Ký Ngay
+                </button>
+              </div>
+            </Reveal>
           ))}
         </div>
 
@@ -121,7 +126,7 @@ const ClassesPage: React.FC = () => {
              </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
             {POPULAR_POSES.map((pose) => {
               const Icon = pose.icon;
               return (
@@ -153,6 +158,9 @@ const ClassesPage: React.FC = () => {
               );
             })}
           </div>
+
+          {/* Breathing Exercise Section */}
+          <BreathingExercise />
         </div>
       </div>
 
@@ -168,10 +176,16 @@ const ClassesPage: React.FC = () => {
             <div className="p-8 pb-4 relative">
               <button 
                 onClick={closeModal}
-                className="absolute top-6 right-6 p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-500 transition-colors"
+                className="absolute top-6 right-6 p-2 rounded-full bg-white/80 hover:bg-white text-stone-800 shadow-sm transition-colors z-10"
               >
                 <X size={24} />
               </button>
+
+              <img 
+                src={selectedPose.image} 
+                alt={selectedPose.name} 
+                className="w-full h-64 sm:h-72 object-cover rounded-2xl mb-6 shadow-md"
+              />
               
               <div className="flex items-center gap-4 mb-4">
                 <div className="bg-primary/10 p-4 rounded-full text-primary">

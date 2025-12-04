@@ -3,12 +3,23 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Instagram, Facebook, Moon, Sun } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
 import MusicPlayer from './MusicPlayer';
+import ScrollToTop from './ScrollToTop';
+import LoadingScreen from './LoadingScreen';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
+
+  useEffect(() => {
+    // Simulate initial loading
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +44,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   }, [isDarkMode]);
 
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <div className="min-h-screen flex flex-col font-sans text-stone-600 dark:text-stone-300 bg-stone-50 dark:bg-candle transition-colors duration-500">
@@ -85,25 +100,32 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </div>
         </div>
 
-        {/* Mobile Nav Overlay */}
-        {isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white dark:bg-stone-900 shadow-lg md:hidden animate-in slide-in-from-top-5 duration-200">
-            <nav className="flex flex-col py-6 px-6 gap-4">
+      </header>
+
+      {/* Mobile Nav Overlay */}
+      <div className={`fixed inset-0 z-50 bg-white dark:bg-stone-900 transition-all duration-300 md:hidden flex flex-col justify-center items-center ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+            <button 
+              onClick={() => setIsMenuOpen(false)} 
+              className="absolute top-6 right-6 p-2 text-stone-800 dark:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-800 rounded-full transition-colors"
+            >
+              <X size={32} />
+            </button>
+
+            <nav className="flex flex-col items-center gap-8">
               {NAV_ITEMS.map((item) => (
                 <Link 
                   key={item.path} 
                   to={item.path}
-                  className={`text-lg font-serif ${
-                    location.pathname === item.path ? 'text-primary' : 'text-stone-700 dark:text-stone-200'
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`text-2xl font-serif font-bold ${
+                    location.pathname === item.path ? 'text-primary' : 'text-stone-800 dark:text-stone-100'
                   }`}
                 >
                   {item.label}
                 </Link>
               ))}
             </nav>
-          </div>
-        )}
-      </header>
+        </div>
 
       {/* Main Content */}
       <main className="flex-grow pt-20">
@@ -160,6 +182,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       </footer>
 
       <MusicPlayer />
+      <ScrollToTop />
     </div>
   );
 };
