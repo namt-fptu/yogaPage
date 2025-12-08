@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CLASSES, PRICING, POPULAR_POSES } from '../constants';
-import { Check, Clock, Signal, X, Lightbulb } from 'lucide-react';
+import { Check, Clock, Signal, X, Lightbulb, Sparkles, ArrowRight, Crown } from 'lucide-react';
 import { YogaPose } from '../types';
 import BreathingExercise from '../components/BreathingExercise';
 import Reveal from '../components/Reveal';
@@ -21,46 +21,65 @@ const ClassesPage: React.FC = () => {
   return (
     <div className="animate-fade-in pb-20 relative">
       {/* Header */}
-      <div className="bg-secondary dark:bg-stone-800 py-16 text-center">
-        <div className="container mx-auto px-6">
-          <h1 className="text-4xl font-serif font-bold text-stone-800 dark:text-stone-100 mb-2">Lớp Học & Gói Tập</h1>
-          <p className="text-stone-600 dark:text-stone-400">Chọn hành trình phù hợp nhất với bạn</p>
+      <div className="relative overflow-hidden bg-gradient-to-br from-stone-100 via-primary-50/30 to-accent-gold/10 dark:from-stone-900 dark:via-primary-900/20 dark:to-accent-gold/5 py-24 text-center">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-gold/10 rounded-full blur-3xl"></div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <span className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-sm font-medium mb-6">
+            <Sparkles size={16} className="text-primary" />
+            <span>Khám Phá</span>
+          </span>
+          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-4">
+            <span className="gradient-text">Lớp Học</span> & Gói Tập
+          </h1>
+          <p className="text-stone-600 dark:text-stone-400 max-w-xl mx-auto text-lg">
+            Chọn hành trình phù hợp nhất với bạn
+          </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 py-20">
         {/* Classes List */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-24">
+        <div className="grid lg:grid-cols-3 gap-8 mb-32">
           {CLASSES.map((cls, index) => (
             <Reveal key={cls.id} delay={index * 100}>
-              <div className="group rounded-2xl overflow-hidden bg-white dark:bg-stone-900 shadow-md hover:shadow-xl transition-all duration-300 border border-stone-100 dark:border-stone-800 h-full">
-                <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={cls.image} 
-                    alt={cls.title} 
-                    className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105 group-hover:brightness-110"
+              <div className="group relative rounded-3xl overflow-hidden glass-card hover-lift h-full">
+                {/* Image container */}
+                <div className="relative h-72 overflow-hidden">
+                  <img
+                    src={cls.image}
+                    alt={cls.title}
+                    className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110"
                   />
-                  {/* Overlay with subtle fade out on hover to reveal image more */}
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
-                  {/* Gradient for text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <span className="bg-primary px-2 py-1 rounded text-xs font-bold uppercase tracking-wide mb-2 inline-block">
+                  {/* Overlays */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="px-4 py-2 bg-gradient-to-r from-primary to-primary-600 text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-lg shadow-primary/30">
                       {cls.difficulty}
                     </span>
                   </div>
+
+                  {/* Title on image */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-2xl font-serif font-bold text-white mb-2">{cls.title}</h3>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-serif font-bold text-stone-900 dark:text-stone-100 mb-3">{cls.title}</h3>
-                  <p className="text-stone-600 dark:text-stone-400 text-sm mb-6 line-clamp-3">{cls.description}</p>
-                  
-                  <div className="flex items-center justify-between text-sm text-stone-500 dark:text-stone-400 border-t border-stone-100 dark:border-stone-800 pt-4">
-                    <div className="flex items-center gap-1">
-                      <Clock size={16} /> {cls.duration}
+
+                {/* Content */}
+                <div className="p-8">
+                  <p className="text-stone-600 dark:text-stone-400 mb-6 line-clamp-2">{cls.description}</p>
+
+                  <div className="flex items-center justify-between text-sm text-stone-500 dark:text-stone-400 pt-4 border-t border-stone-100 dark:border-stone-800">
+                    <div className="flex items-center gap-2 bg-stone-100 dark:bg-stone-800 px-3 py-1.5 rounded-full">
+                      <Clock size={16} className="text-primary" />
+                      <span>{cls.duration}</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Signal size={16} /> Offline
+                    <div className="flex items-center gap-2 bg-stone-100 dark:bg-stone-800 px-3 py-1.5 rounded-full">
+                      <Signal size={16} className="text-primary" />
+                      <span>Offline</span>
                     </div>
                   </div>
                 </div>
@@ -70,51 +89,69 @@ const ClassesPage: React.FC = () => {
         </div>
 
         {/* Pricing */}
-        <div className="text-center mb-12">
-           <h2 className="text-3xl font-serif font-bold text-stone-800 dark:text-stone-100 mb-4">Bảng Giá</h2>
-           <div className="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-1.5 bg-accent-gold/20 text-accent-gold text-sm font-medium rounded-full mb-4">
+            Bảng Giá
+          </span>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
+            <span className="gradient-text-gold">Gói Tập</span> Phù Hợp
+          </h2>
+          <p className="text-stone-600 dark:text-stone-400 max-w-xl mx-auto">
+            Đầu tư cho sức khỏe là khoản đầu tư khôn ngoan nhất
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-32">
           {PRICING.map((plan, index) => (
             <Reveal key={plan.id} delay={index * 100} className="h-full">
-              <div 
-                className={`relative rounded-2xl p-8 border h-full flex flex-col ${
-                  plan.isPopular 
-                    ? 'border-primary bg-stone-50 dark:bg-stone-800 shadow-xl scale-105 z-10' 
-                    : 'border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 shadow-sm'
-                }`}
+              <div
+                className={`relative rounded-3xl p-8 h-full flex flex-col transition-all duration-500 ${plan.isPopular
+                    ? 'bg-gradient-to-b from-primary-600 to-primary-700 text-white scale-105 shadow-2xl shadow-primary/30 z-10'
+                    : 'glass-card hover-lift'
+                  }`}
               >
                 {plan.isPopular && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white text-xs font-bold uppercase py-1 px-4 rounded-full">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-accent-gold to-yellow-500 text-stone-900 text-xs font-bold uppercase py-2 px-6 rounded-full flex items-center gap-2 shadow-lg">
+                    <Crown size={14} />
                     Phổ Biến Nhất
                   </div>
                 )}
-                <h3 className="text-xl font-bold text-stone-800 dark:text-stone-100 text-center mb-2">{plan.name}</h3>
-                <div className="text-center mb-6">
-                  <span className="text-4xl font-serif font-bold text-primary">{plan.price}</span>
-                  {plan.id !== 'drop-in' && <span className="text-stone-500 text-sm">/tháng</span>}
+
+                <h3 className={`text-xl font-bold text-center mb-2 ${plan.isPopular ? 'text-white' : 'text-stone-800 dark:text-stone-100'}`}>
+                  {plan.name}
+                </h3>
+
+                <div className="text-center mb-8">
+                  <span className={`text-5xl font-serif font-bold ${plan.isPopular ? 'text-white' : 'gradient-text'}`}>
+                    {plan.price}
+                  </span>
+                  {plan.id !== 'drop-in' && (
+                    <span className={`text-sm ${plan.isPopular ? 'text-white/70' : 'text-stone-500'}`}>/tháng</span>
+                  )}
                 </div>
-                
+
                 <ul className="space-y-4 mb-8 flex-grow">
                   {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-stone-600 dark:text-stone-300">
-                      <Check size={18} className="text-primary flex-shrink-0" />
-                      {feature}
+                    <li key={idx} className={`flex items-start gap-3 ${plan.isPopular ? 'text-white/90' : 'text-stone-600 dark:text-stone-300'}`}>
+                      <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${plan.isPopular ? 'bg-white/20' : 'bg-primary/20'}`}>
+                        <Check size={12} className={plan.isPopular ? 'text-white' : 'text-primary'} />
+                      </div>
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                <a 
-                  href="https://zalo.me/0367852022" 
-                  target="_blank" 
+                <a
+                  href="https://zalo.me/0367852022"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className={`block w-full py-3 rounded-xl font-bold transition-colors text-center ${
-                  plan.isPopular 
-                    ? 'bg-primary text-white hover:bg-emerald-700' 
-                    : 'bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 hover:bg-stone-200 dark:hover:bg-stone-700'
-                }`}>
+                  className={`block w-full py-4 rounded-2xl font-bold transition-all text-center flex items-center justify-center gap-2 ${plan.isPopular
+                      ? 'bg-white text-primary-600 hover:bg-stone-100 shadow-lg'
+                      : 'bg-gradient-to-r from-primary to-primary-600 text-white hover:from-primary-600 hover:to-primary-700 shadow-lg shadow-primary/20'
+                    }`}
+                >
                   Đăng Ký Ngay
+                  <ArrowRight size={18} />
                 </a>
               </div>
             </Reveal>
@@ -122,39 +159,45 @@ const ClassesPage: React.FC = () => {
         </div>
 
         {/* Popular Poses Section */}
-        <div className="border-t border-stone-200 dark:border-stone-800 pt-24">
+        <div className="border-t border-stone-200 dark:border-stone-800 pt-28">
           <div className="text-center mb-16">
-             <h2 className="text-3xl font-serif font-bold text-stone-800 dark:text-stone-100 mb-4">Tư Thế Phổ Biến & Lợi Ích</h2>
-             <p className="text-stone-600 dark:text-stone-400 max-w-2xl mx-auto">
-               Khám phá các động tác nền tảng giúp cải thiện sức khỏe toàn diện và cân bằng năng lượng. Nhấn vào từng thẻ để xem chi tiết.
-             </p>
+            <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+              Tư Thế
+            </span>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
+              <span className="gradient-text">Tư Thế Phổ Biến</span> & Lợi Ích
+            </h2>
+            <p className="text-stone-600 dark:text-stone-400 max-w-2xl mx-auto">
+              Khám phá các động tác nền tảng giúp cải thiện sức khỏe toàn diện. Nhấn vào từng thẻ để xem chi tiết.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-28">
             {POPULAR_POSES.map((pose) => {
               const Icon = pose.icon;
               return (
-                <div 
-                  key={pose.id} 
+                <div
+                  key={pose.id}
                   onClick={() => openModal(pose)}
-                  className="bg-stone-50 dark:bg-stone-800/50 p-6 rounded-2xl hover:bg-white dark:hover:bg-stone-800 border border-transparent hover:border-primary/20 hover:shadow-lg transition-all duration-300 flex items-start gap-4 group cursor-pointer"
+                  className="group glass-card p-6 rounded-2xl cursor-pointer hover-lift flex items-start gap-5"
                 >
-                  <div className="bg-white dark:bg-stone-900 p-3 rounded-full shadow-sm text-stone-400 group-hover:text-primary transition-colors flex-shrink-0">
-                    <Icon size={28} strokeWidth={1.5} />
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-100 to-primary-50 dark:from-primary-900/50 dark:to-primary-800/30 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-primary/10">
+                    <Icon size={28} strokeWidth={1.5} className="text-primary" />
                   </div>
-                  <div>
+                  <div className="flex-grow">
                     <div className="flex items-center gap-2 mb-1 flex-wrap">
-                      <h3 className="font-bold text-lg text-stone-800 dark:text-stone-100">{pose.name}</h3>
-                      <span className={`text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider font-bold border ${
-                        pose.difficulty === 'Cơ bản' ? 'border-green-200 text-green-700 dark:border-green-800 dark:text-green-400 bg-green-50 dark:bg-green-900/20' :
-                        pose.difficulty === 'Trung bình' ? 'border-amber-200 text-amber-700 dark:border-amber-800 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/20' :
-                        'border-red-200 text-red-700 dark:border-red-800 dark:text-red-400 bg-red-50 dark:bg-red-900/20'
-                      }`}>
+                      <h3 className="font-bold text-lg text-stone-800 dark:text-stone-100 group-hover:text-primary transition-colors">
+                        {pose.name}
+                      </h3>
+                      <span className={`text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider font-bold ${pose.difficulty === 'Cơ bản' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' :
+                          pose.difficulty === 'Trung bình' ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400' :
+                            'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+                        }`}>
                         {pose.difficulty}
                       </span>
                     </div>
                     <p className="text-xs text-stone-400 font-serif italic mb-2">{pose.sanskrit}</p>
-                    <p className="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+                    <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed line-clamp-2">
                       {pose.benefit}
                     </p>
                   </div>
@@ -171,79 +214,90 @@ const ClassesPage: React.FC = () => {
       {/* Pose Detail Modal */}
       {selectedPose && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div 
-            className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm transition-opacity" 
+          <div
+            className="absolute inset-0 bg-stone-900/70 backdrop-blur-md transition-opacity"
             onClick={closeModal}
           ></div>
-          <div className="bg-white dark:bg-stone-900 rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative z-10 animate-fade-in-up border border-stone-200 dark:border-stone-700">
-            {/* Header with Icon */}
-            <div className="p-8 pb-4 relative">
-              <button 
+          <div className="glass-card rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative z-10 animate-scale-in border-2 border-white/20 dark:border-white/5">
+            {/* Header with Image */}
+            <div className="relative">
+              <img
+                src={selectedPose.image}
+                alt={selectedPose.name}
+                className="w-full h-72 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+              <button
                 onClick={closeModal}
-                className="absolute top-6 right-6 p-2 rounded-full bg-white/80 hover:bg-white text-stone-800 shadow-sm transition-colors z-10"
+                className="absolute top-4 right-4 p-3 glass rounded-full text-white hover:bg-white/30 transition-colors z-10"
               >
                 <X size={24} />
               </button>
 
-              <img 
-                src={selectedPose.image} 
-                alt={selectedPose.name} 
-                className="w-full h-64 sm:h-72 object-cover rounded-2xl mb-6 shadow-md"
-              />
-              
-              <div className="flex items-center gap-4 mb-4">
-                <div className="bg-primary/10 p-4 rounded-full text-primary">
-                  {React.createElement(selectedPose.icon, { size: 32 })}
+              {/* Title on image */}
+              <div className="absolute bottom-6 left-6 right-6 flex items-end gap-4">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-white shadow-lg">
+                  {React.createElement(selectedPose.icon, { size: 32, strokeWidth: 1.5 })}
                 </div>
-                <div>
-                   <h2 className="text-3xl font-serif font-bold text-stone-900 dark:text-stone-100">{selectedPose.name}</h2>
-                   <p className="text-stone-500 dark:text-stone-400 italic text-lg">{selectedPose.sanskrit}</p>
+                <div className="flex-grow">
+                  <h2 className="text-3xl font-serif font-bold text-white">{selectedPose.name}</h2>
+                  <p className="text-white/70 italic">{selectedPose.sanskrit}</p>
                 </div>
               </div>
-              
-              <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-bold rounded-full mb-6">
+            </div>
+
+            <div className="p-8">
+              <div className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-bold rounded-full mb-6">
                 Cấp độ: {selectedPose.difficulty}
               </div>
 
               <div className="space-y-6">
-                 {/* Benefit */}
-                 <div>
-                    <h4 className="font-bold text-stone-800 dark:text-stone-200 mb-2 uppercase tracking-wide text-sm">Lợi Ích</h4>
-                    <p className="text-stone-600 dark:text-stone-300 leading-relaxed">{selectedPose.benefit}</p>
-                 </div>
+                {/* Benefit */}
+                <div>
+                  <h4 className="font-bold text-stone-800 dark:text-stone-200 mb-3 uppercase tracking-wide text-sm flex items-center gap-2">
+                    <Sparkles size={16} className="text-primary" />
+                    Lợi Ích
+                  </h4>
+                  <p className="text-stone-600 dark:text-stone-300 leading-relaxed">{selectedPose.benefit}</p>
+                </div>
 
-                 {/* Steps */}
-                 {selectedPose.steps && (
-                   <div className="bg-stone-50 dark:bg-stone-800/50 p-6 rounded-2xl">
-                      <h4 className="font-bold text-stone-800 dark:text-stone-200 mb-4 uppercase tracking-wide text-sm">Cách Thực Hiện</h4>
-                      <ul className="space-y-3">
-                        {selectedPose.steps.map((step, idx) => (
-                          <li key={idx} className="flex gap-3 text-stone-600 dark:text-stone-300">
-                            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-stone-200 dark:bg-stone-700 flex items-center justify-center text-xs font-bold text-stone-600 dark:text-stone-300">{idx + 1}</span>
-                            <span>{step}</span>
-                          </li>
-                        ))}
-                      </ul>
-                   </div>
-                 )}
+                {/* Steps */}
+                {selectedPose.steps && (
+                  <div className="bg-gradient-to-br from-primary-50 to-accent-gold/10 dark:from-primary-900/20 dark:to-accent-gold/5 p-6 rounded-2xl">
+                    <h4 className="font-bold text-stone-800 dark:text-stone-200 mb-4 uppercase tracking-wide text-sm">Cách Thực Hiện</h4>
+                    <ul className="space-y-3">
+                      {selectedPose.steps.map((step, idx) => (
+                        <li key={idx} className="flex gap-4 text-stone-600 dark:text-stone-300">
+                          <span className="flex-shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-primary to-primary-600 flex items-center justify-center text-sm font-bold text-white shadow-lg shadow-primary/20">
+                            {idx + 1}
+                          </span>
+                          <span className="pt-1">{step}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
-                 {/* Tips */}
-                 {selectedPose.tips && (
-                   <div className="flex gap-4 bg-amber-50 dark:bg-amber-900/10 p-4 rounded-xl text-amber-800 dark:text-amber-200 border border-amber-100 dark:border-amber-800/20">
-                      <Lightbulb size={24} className="flex-shrink-0" />
-                      <div>
-                        <span className="font-bold block mb-1">Mẹo nhỏ:</span>
-                        <p className="text-sm opacity-90">{selectedPose.tips}</p>
-                      </div>
-                   </div>
-                 )}
+                {/* Tips */}
+                {selectedPose.tips && (
+                  <div className="flex gap-4 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 p-5 rounded-2xl border border-amber-200/50 dark:border-amber-800/30">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-amber-500/20">
+                      <Lightbulb size={20} className="text-white" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-amber-800 dark:text-amber-200 block mb-1">Mẹo nhỏ:</span>
+                      <p className="text-amber-700 dark:text-amber-300 text-sm">{selectedPose.tips}</p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
-            
-            <div className="p-6 pt-0 text-center">
-              <button 
+
+            <div className="p-6 pt-0">
+              <button
                 onClick={closeModal}
-                className="w-full py-3 bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 rounded-xl font-medium transition-colors"
+                className="w-full py-4 bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 rounded-2xl font-medium transition-all"
               >
                 Đóng
               </button>
